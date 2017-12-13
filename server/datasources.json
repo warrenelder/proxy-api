@@ -1,0 +1,29 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "third-party-api": {
+    "name": "third-party-api",
+    "baseURL": "https://api.postcodes.io",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "functions": {
+          "getpostcodes": [
+            "postcode"
+          ]
+        },
+        "template": {
+          "method": "GET",
+          "url": "https://api.postcodes.io/postcodes/{postcode}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          }
+        }
+      }
+    ]
+  }
+}
